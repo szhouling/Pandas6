@@ -1,0 +1,6 @@
+import pandas as pd
+
+def count_rich_customers(store: pd.DataFrame) -> pd.DataFrame:
+    df = store[store['amount'] > 500]
+    richcount = len(set(df['customer_id']))
+    return pd.DataFrame([richcount], columns = ['rich_count'])
